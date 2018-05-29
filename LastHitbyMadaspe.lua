@@ -1,12 +1,12 @@
 
 local LastHit = {}
-LastHit.optionEnable =  Menu.AddOptionBool({"ScriptsByMadaspe", "LastHit"}, "False", false)
-LastHit.optionKey = Menu.AddKeyOption({"ScriptsByMadaspe", "LastHit"}, "LastHit Key", Enum.ButtonCode.KEY_O)
+local optionEnable =  Menu.AddOptionBool({"ScriptsByMadaspe", "LastHit"}, "False", false)
+local optionKey = Menu.AddKeyOption({"ScriptsByMadaspe", "LastHit"}, "LastHit Key", Enum.ButtonCode.KEY_O)
 local t1 = nil
 local t2 = nil
 function LastHit.OnUpdate()
 	if not Menu.IsEnabled(optionEnable) then return end
-	if not Menu.IsKeyDown(key) then return end
+	if not Menu.IsKeyDown(optionKey) then return end
 	local myHero = Heroes.GetLocal()
 	if not myHero then return 	end
 	local range = NPC.GetAttackRange(myHero)
