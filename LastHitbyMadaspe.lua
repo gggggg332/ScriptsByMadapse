@@ -1,7 +1,7 @@
 
-local lastHit = {}
-lastHit.optionEnable =  Menu.AddOptionBool({"ScriptsByMadaspe", "LastHit"}, "False", false)
-lastHit.optionKey = Menu.AddKeyOption({"ScriptsByMadaspe", "LastHit"}, "LastHit Key", Enum.ButtonCode.KEY_O)
+local LastHit = {}
+LastHit.optionEnable =  Menu.AddOptionBool({"ScriptsByMadaspe", "LastHit"}, "False", false)
+LastHit.optionKey = Menu.AddKeyOption({"ScriptsByMadaspe", "LastHit"}, "LastHit Key", Enum.ButtonCode.KEY_O)
 local t1 = nil
 local t2 = nil
 function LastHit.OnUpdate()
@@ -47,4 +47,4 @@ end
 
 
 
-return lastHit
+return LastHit
