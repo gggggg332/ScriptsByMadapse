@@ -2,8 +2,8 @@ local Invoker = require("Invoker")
 
 local LastHit = {}
 
-local optionAwareness = Menu.AddOption({"Utility"}, "Last Hit Awareness", "On/Off")
-local optionEnable = Menu.AddOption({"Utility"}, "Last Hit Enable", "On/Off")
+local optionAwareness = Menu.AddOptionBool({"Utility"}, "Last Hit Awareness", "On/Off")
+local optionEnable = Menu.AddOptionBool({"Utility"}, "Last Hit Enable", "On/Off")
 local key = Menu.AddKeyOption({"Utility"}, "Last Hit Key", Enum.ButtonCode.KEY_SPACE)
 
 local target1, target2
