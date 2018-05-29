@@ -3,7 +3,7 @@ local Map = require("Map")
 
 local Invoker = {}
 
-local keyGhostWalk = Menu.AddKeyOptionBool({"ScriptsByMadaspe", "Invoker By Madapse"}, "Ghost Walk Key", Enum.ButtonCode.KEY_F5)
+local keyGhostWalk = Menu.AddKeyOption({"ScriptsByMadaspe", "Invoker By Madapse"}, "Ghost Walk Key", Enum.ButtonCode.KEY_F5)
 local optionRightClickCombo = Menu.AddOptionBool({"ScriptsByMadaspe", "Invoker By Madapse"}, "Right Click Combo", "cast cold snap, alacrity or forge spirit when right click enemy hero or building")
 local optionMeteorBlastCombo = Menu.AddOptionBool({"ScriptsByMadaspe", "Invoker By Madapse"}, "Meteor & Blast Combo", "cast deafening blast after chaos meteor")
 local optionColdSnapCombo = Menu.AddOptionBool({"ScriptsByMadaspe", "Invoker By Madapse"}, "Cold Snap Combo", "cast cold snap on enemy who is affected by DoT, like chaos meteor, urn, ice wall, etc.")
