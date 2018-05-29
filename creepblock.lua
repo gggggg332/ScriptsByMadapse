@@ -19,7 +19,7 @@ local my_team = nil
 
 local last_stop = 0
 local sleep = 0
-local less_stopping = false
+local _stopping = false
 
 local Fountain = nil
 
@@ -64,8 +64,8 @@ function Blocker.OnDraw()
 
     local hx, hy = Renderer.WorldToScreen(origin)
     if less_stopping then
-        Renderer.SetDrawColor(0, 255, 255, 150)
-        Renderer.DrawText(font, hx, hy, 'LESS STOPPING (TOWER NEAR)', 1)
+        Renderer.SetDrawColor(100, 213, 14, 150)
+        Renderer.DrawText(font, hx, hy, 'LESS STOPPING (By Madaspe)', 1)
     end
 
     for i, npc in ipairs(creeps) do
