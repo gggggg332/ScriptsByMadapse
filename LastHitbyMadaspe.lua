@@ -2,8 +2,8 @@
 local lastHit = {}
 lastHit.optionEnable =  Menu.AddOptionBool({"ScriptsByMadaspe", "LastHit"}, "False", false)
 lastHit.optionKey = Menu.AddKeyOption({"ScriptsByMadaspe", "LastHit"}, "LastHit Key", Enum.ButtonCode.KEY_O)
-local 1
-local 2
+local t1 = nil
+local t2 = nil
 function LastHit.OnUpdate()
 	if not Menu.IsEnabled(optionEnable) then return end
 	if not Menu.IsKeyDown(key) then return end
@@ -11,8 +11,8 @@ function LastHit.OnUpdate()
 	if not myHero then return 	end
 	local range = NPC.GetAttackRange(myHero)
 	local target
-	if 2 and Entity.IsAlive(2) and not Entity.IsDormant(2) and NPC.IsEntityInRange(myHero, 2, range) then 1 = 2 end
-    if 1 and Entity.IsAlive(1) and not Entity.IsDormant(1) and NPC.IsEntityInRange(myHero, 1, range) then 1 = 1 end
+	if t2 and Entity.IsAlive(t2) and not Entity.IsDormant(t2) and NPC.IsEntityInRange(myHero, t2, range) then t1 = t2 end
+    if t1 and Entity.IsAlive(t1) and not Entity.IsDormant(t1) and NPC.IsEntityInRange(myHero, t1, range) then t1 = t1 end
 	if target then Player.AttackTarget(Players.GetLocal(), myHero, target) end
 end
 function LastHit.OnDraw()
@@ -30,11 +30,11 @@ function LastHit.OnDraw()
 			if Entity.GetHealth(npc) <= oneHitDamage then
 				Renderer.SetDrawColor(255, 0, 0, 150)
 				Renderer.DrawFilledRect(x-size, y-size, 2*size, 2*size)
-				target1 = npc
+				t1 = npc
 			elseif Entity.GetHealth(npc) <= 1.5 * oneHitDamage then
 				Renderer.SetDrawColor(255, 255, 0, 150)
 				Renderer.DrawFilledRect(x-size, y-size, 2*size, 2*size)
-				target2 = npc
+				t1 = npc
 			end
 		end
 	end
@@ -44,3 +44,7 @@ function LastHit.GetOneHitDamageVersus(myHero, npc)
 	local damage = NPC.GetTrueDamage(myHero) * NPC.GetArmorDamageMultiplier(npc)
 	return damage
 end
+
+
+
+return lastHit
